@@ -6,6 +6,7 @@ require 'movies_around_you/version'
 Gem::Specification.new do |spec|
   spec.name          = "movies_around_you"
   spec.version       = MoviesAroundYou::VERSION
+  spec.date          = "2016-03-12"
   spec.authors       = ["Johnson Tai"]
   spec.email         = ["johnsont426@gmail.com"]
 
