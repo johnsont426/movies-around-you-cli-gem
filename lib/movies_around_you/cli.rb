@@ -81,4 +81,20 @@ class MoviesAroundYou::CLI
 		end
 	end
 
+	def call
+		puts "<<<<=================================>>>>"
+		puts "<<                                     >>"
+		puts "<<           MOVIES                    >>"
+		puts "<<               Around                >>"
+		puts "<<                    You!!            >>"
+		puts "<<                                     >>"
+		puts "<<<<=================================>>>>"
+		get_zip
+		zip_to_url
+		make_theater
+		add_movie_to_theater
+		theaters_around
+		movies
+	end
+
 end
