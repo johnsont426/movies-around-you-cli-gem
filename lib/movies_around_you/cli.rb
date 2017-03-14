@@ -36,4 +36,20 @@ class MoviesAroundYou::CLI
 		puts "============================================================="
 	end
 
+	def movies
+		puts "Which one are you going?"
+		theater_number = gets.to_i
+		puts "============================================================="
+		puts "These are the movies playing today"
+
+		MoviesAroundYou::Theater.all[theater_number-1].movies.each_with_index do |movie, index|
+			if movie.genre
+				puts "#{index+1}. #{movie.title}  (#{movie.genre})"
+			else
+				puts "#{index+1}. #{movie.title}"
+			end
+		end
+		puts "============================================================="
+	end
+
 end
