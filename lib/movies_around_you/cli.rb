@@ -63,7 +63,22 @@ class MoviesAroundYou::CLI
 			puts "Tickets are all out for today"
 		end
 		puts "============================================================="
-		
+
+		continue_or_exit
+	end
+
+	def continue_or_exit
+		puts "Choose another theater? (Y/n)"
+		input = gets.strip.downcase
+		case input
+		when "y"
+			theaters_around
+			movies
+		when "n"
+			puts "<<<<=================================>>>>"
+			puts "       Goodbye! Enjoy your movie!!       "
+			puts "<<<<=================================>>>>"
+		end
 	end
 
 end
