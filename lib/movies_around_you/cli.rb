@@ -26,4 +26,14 @@ class MoviesAroundYou::CLI
 		end
 	end
 
+	def theaters_around
+		puts "============================================================="
+		puts "Here are the theaters around you:"
+		theaters_array = MoviesAroundYou::Theater.all
+		theaters_array.each_with_index do |theater, index|
+			puts "#{index+1}. #{theater.name}"
+		end
+		puts "============================================================="
+	end
+
 end
