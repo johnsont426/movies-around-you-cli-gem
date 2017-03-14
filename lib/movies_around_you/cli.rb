@@ -1,6 +1,6 @@
 class MoviesAroundYou::CLI
 
-	attr_reader :zip_code, :url
+	attr_reader :zip_code, :url, :movie
 
 	def get_zip
 		puts "Please enter your zip code to start"
@@ -50,6 +50,20 @@ class MoviesAroundYou::CLI
 			end
 		end
 		puts "============================================================="
+
+		puts "Pick a movie"
+		movie_number = gets.to_i
+		@movie = MoviesAroundYou::Theater.all[theater_number-1].movies[movie_number-1]
+		puts "============================================================="
+		puts "<<<<<#{movie.title}>>>>>"
+		if movie.time_available != []
+			puts "Showtimes available:" 
+			movie.time_available.each{|time| puts "#{time}"}
+		else
+			puts "Tickets are all out for today"
+		end
+		puts "============================================================="
+		
 	end
 
 end
