@@ -12,9 +12,18 @@ class MoviesAroundYou::CLI
 	end
 
 	def make_theater
+		theater_array = MoviesAroundYou::Scraper.new.theater_scraper(url)
+		theater_array.each do |theater_name|
+			MoviesAroundYou::Theater.new(theater_name)
+		end
 	end
 
 	def add_movie_to_theater
+		movie_array = MoviesAroundYou::Scraper.new.movies_scraper(url)
+		movie_array.each do |array|
+			new_array = array.collect{|hash| MoviesAroundYou::Movie.new(hash)}
+			MoviesAroundYou::Theater.all[movie_array.index(array)].add_movie_from_collection(new_array)
+		end
 	end
 
 end
