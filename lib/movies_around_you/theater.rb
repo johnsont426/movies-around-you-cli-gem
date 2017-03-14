@@ -1,3 +1,5 @@
+class InvalidType < StandardError ;end
+
 class MoviesAroundYou::Theater
 	
 	attr_reader :name
