@@ -20,9 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-Type the below and follow the on screen prompts.
+To use this gem locally, clone this repo and run
 
-    $ worlds-best-restaurants
+    $ bin/movies-around-you
 
 ## Development
 
